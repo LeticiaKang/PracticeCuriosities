@@ -10,13 +10,15 @@ import SupportIcon from './icons/IconSupport.vue'             // 아이콘
 
 <!-- HTML 코드 작성 -->
 <template>
-  <!-- 중복되는 형식을 컴포넌트로 만들어 -->
+  <!-- 공통 형식: WelcomeItem -->
   <WelcomeItem>
     <!-- 
         #icon은 Vue.js의 슬롯(slot)을 사용하는 기능 중 하나 
         컴포넌트의 특정 영역을 다른 컴포넌트나 마크업을 대체할 수있는 방법이다.
 
         - 현재 #icon 과 #heading 2개의 슬롯을 가지고 있음
+        - 슬롯은 <template #슬롯 이름>을 vue에 정의하고,
+          하위 컴포넌트에 형식을 지정하고 그 사이에 <slot name="슬롯이름">으로 정의해서 매핑한다.
     -->
     <!-- 아이콘을 넣음 -->
     <template #icon>
@@ -31,6 +33,7 @@ import SupportIcon from './icons/IconSupport.vue'             // 아이콘
     provides you with all information you need to get started.
   </WelcomeItem>
 
+  <!-- 공통 형식: WelcomeItem -->
   <WelcomeItem>
     <template #icon>
       <ToolingIcon />
@@ -53,6 +56,7 @@ import SupportIcon from './icons/IconSupport.vue'             // 아이콘
     More instructions are available in <code>README.md</code>.
   </WelcomeItem>
 
+  <!-- 공통 형식: WelcomeItem -->
   <WelcomeItem>
     <template #icon>
       <EcosystemIcon />
@@ -69,6 +73,7 @@ import SupportIcon from './icons/IconSupport.vue'             // 아이콘
     a visit.
   </WelcomeItem>
 
+  <!-- 공통 형식: WelcomeItem -->
   <WelcomeItem>
     <template #icon>
       <CommunityIcon />
@@ -87,6 +92,7 @@ import SupportIcon from './icons/IconSupport.vue'             // 아이콘
     twitter account for latest news in the Vue world.
   </WelcomeItem>
 
+  <!-- 공통 형식: WelcomeItem -->
   <WelcomeItem>
     <template #icon>
       <SupportIcon />
