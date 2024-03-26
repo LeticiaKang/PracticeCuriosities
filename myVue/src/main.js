@@ -14,4 +14,5 @@ app.use(createPinia())
 app.use(router)
 
 // Composition API 02. vue 인스턴스 마운트 정의
+// 앱 인스턴스는 .mount() 메서드가 호출될 때까지 아무 것도 렌더링하지 않는다.
 app.mount('#app')
