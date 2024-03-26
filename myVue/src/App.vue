@@ -1,28 +1,53 @@
-<!-- Options API -->
+<!-- Composition API  -->
 <template>
-  <div id="app">
+  <ul>
+    <li v-for="item in items" v-bind:key="item.name">
+      {{ item.name }}의 가격: <input type="text" v-model="item.price">
+    </li> 
+  </ul> 
+  <br>
+  <div>
     <ul>
-      <!-- v-bind 속성-->
-      <li v-for="item in items" :key="item.name">
-        <!-- 아이디, 클래스, 스타일 등의 HTML 속성 값에 뷰 데이터 값을 연결 -->
-        {{ item.name }}의 가격은 {{ item.price }}원이고, 재고는 {{ item.quantity }}개 남아있다.
+      <li v-for="item in items" v-bind:key="item.name">
+      {{ item.name }}: {{ item.price }} x {{ item.quantity }} = {{ item.price * item.quantity }} 원
       </li>
     </ul>
+    <br>
+    <p>▷ 합계: {{ totalPrice }} 원</p>
+  </div>
+  <div>
+    
   </div>
 </template>
 
-<!-- Options API 방식 -->
 <script>
+import { ref, computed } from 'vue'
+
 export default {
-  data() {
+  setup() {
+    const items = ref([
+      {
+        name: 'CPU', price: 462984, quantity: 1
+      }, 
+      {
+        name: '메인보드', price: 112053, quantity: 1
+      }, 
+      {
+        name: '메모리', price: 79608, quantity: 2
+      }
+    ])
+    
+    // computed 속성
+    const totalPrice = computed(() => {
+      return items.value.reduce(function (sum, item) {
+        return sum + (item.price * item.quantity)
+      }, 0)
+    })
+
     return {
-      message: "Hello",
-      items: [
-        { name: '일번', price: 1000, quantity: 111 },
-        { name: '이번', price: 2000, quantity: 222 },
-        { name: '삼번', price: 3000, quantity: 333 },
-      ],
-    };
+      items,
+      totalPrice,
+    }
   },
-};
+}
 </script>
