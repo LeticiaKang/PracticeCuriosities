@@ -29,7 +29,22 @@ const routes = [
     path: '/clickEvent',
     name: 'clickEvent',
     component: () => import('../views/EventClick.vue')
-  }
+  },
+  {
+    path: '/watchFunc',
+    name: 'watchFunc',
+    component: () => import('../views/WatchFunc.vue')
+  },
+  {
+    path: '/computedFunc',
+    name: 'computedFunc',
+    component: () => import('../views/ComputedFunc.vue')
+  },
+  {
+    path: '/nested',
+    name: 'nested',
+    component: () => import('../views/NestedComponent.vue')
+  },
 ]
 
 const router = createRouter({
@@ -43,6 +58,6 @@ function createDataBindingRoute(path, name) {
   return {
     path: `/dataBinding${path}`,
     name: `dataBinding${name}`,
-    component: () => import(/* webpackChunkName: "dataBinding" */ `../views/databing/DataBinding${name}.vue`)
+    component: () => import(`../views/databing/DataBinding${name}.vue`)
   };
 }
