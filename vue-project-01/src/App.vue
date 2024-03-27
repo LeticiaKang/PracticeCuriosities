@@ -16,6 +16,9 @@
     <router-link to="/dataBindingMultiData">다중 데이터를 이용한 HTML 요소 생성</router-link>
     <br>
     <br>
+    <router-link to="/listRendering">V-for Rendering</router-link>
+    <br>
+    <br>
     <router-link to="/dataBindingButton">button disabled</router-link>
   </nav>
   <router-view/>  <!-- 라우팅 컴포넌트, 현재 라우트에 맞는 컴포넌트를 동적으로 표시한다.

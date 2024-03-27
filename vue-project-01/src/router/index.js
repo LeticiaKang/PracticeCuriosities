@@ -20,7 +20,11 @@ const routes = [
   createDataBindingRoute('Value', 'Value'),
   createDataBindingRoute('MultiData', 'MultiData'),
   createDataBindingRoute('Button', 'Button'),
-
+  {
+    path: '/listRendering',
+    name: 'listRendering',
+    component: () => import('../views/ListRendering.vue'),
+  }
 ]
 
 const router = createRouter({
