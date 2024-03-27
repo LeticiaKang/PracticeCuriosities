@@ -24,6 +24,11 @@ const routes = [
     path: '/listRendering',
     name: 'listRendering',
     component: () => import('../views/ListRendering.vue'),
+  },
+  {
+    path: '/clickEvent',
+    name: 'clickEvent',
+    component: () => import('../views/EventClick.vue')
   }
 ]
 
